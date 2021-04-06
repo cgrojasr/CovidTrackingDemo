@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dmCovidTracking">
+  <DataContextMoniker Name="/dmCovidTrackingDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2b11d717-0da0-4972-919f-81186f2303f8" absoluteBounds="0.75, 2.25, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/dmCovidTrackingDataContext/Organizacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d260ee3-38ca-4d13-82d1-a2609c100733" absoluteBounds="0.765, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="25328dc2-53f2-481a-8614-ddec139f376f" absoluteBounds="3.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dmCovidTrackingDataContext/RecomendacionOrganizacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a708c0b-dd90-4f9d-95eb-d77909d07b3c" absoluteBounds="3.5150000000000006, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d5a9107-92e8-48bc-9f4f-002d12bb0c32" absoluteBounds="4.25, 4.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dmCovidTrackingDataContext/RecomendacionDia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="646212b4-80a6-4af1-a686-5bcd8425ad84" absoluteBounds="4.2650000000000006, 4.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.94314697265625); (4.5 : 2.94314697265625); (4.5 : 2.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dmCovidTrackingDataContext/Organizacion/Organizacion_RecomendacionOrganizacion" />
+      <nodes>
+        <classShapeMoniker Id="2b11d717-0da0-4972-919f-81186f2303f8" />
+        <classShapeMoniker Id="25328dc2-53f2-481a-8614-ddec139f376f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 3.6362939453125); (1.75 : 5.28929768880208); (4.25 : 5.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dmCovidTrackingDataContext/Organizacion/Organizacion_RecomendacionDia" />
+      <nodes>
+        <classShapeMoniker Id="2b11d717-0da0-4972-919f-81186f2303f8" />
+        <classShapeMoniker Id="2d5a9107-92e8-48bc-9f4f-002d12bb0c32" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

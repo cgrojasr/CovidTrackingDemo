@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbCuidateBien" Class="dmCovidTrackingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=dbupcaaddemo.c7hd087gmch2.us-east-2.rds.amazonaws.com;Initial Catalog=dbCuidateBien;Persist Security Info=True;User ID=admin" SettingsObjectName="UPC.CTD.BL.Properties.Settings" SettingsPropertyName="dbCuidateBienConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Organizacion" Member="Organizacions">
+    <Type Name="Organizacion">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Organizacion_RecomendacionOrganizacion" Member="RecomendacionOrganizacions" ThisKey="Id" OtherKey="IdOrganizacion" Type="RecomendacionOrganizacion" />
+      <Association Name="Organizacion_RecomendacionDia" Member="RecomendacionDias" ThisKey="Id" OtherKey="IdOrganizacion" Type="RecomendacionDia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecomendacionOrganizacion" Member="RecomendacionOrganizacions">
+    <Type Name="RecomendacionOrganizacion">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdOrganizacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Recomendacion" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Organizacion_RecomendacionOrganizacion" Member="Organizacion" ThisKey="IdOrganizacion" OtherKey="Id" Type="Organizacion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecomendacionDia" Member="RecomendacionDias">
+    <Type Name="RecomendacionDia">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdOrganizacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Recomendacion" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Association Name="Organizacion_RecomendacionDia" Member="Organizacion" ThisKey="IdOrganizacion" OtherKey="Id" Type="Organizacion" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
